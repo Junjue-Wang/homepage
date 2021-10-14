@@ -1,0 +1,34 @@
+
+
+#main_div {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.bio {
+    margin-top: 20px;
+
+}
+
+.article_content {
+    margin-top: 10px;
+    background: white;
+    box-shadow: 10px 5px 5px #d0dee7;
+    border-color: whitesmoke;
+    border-style: solid;
+}
+
+.article_title {
+    font-weight: bold;
+}
+
+.article_journal{
+    font-style: italic;
+}
