@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>LoveCS</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- <base href="/"> -->
+
+    <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <link rel="icon" type="image/png" href="https://github.com/Junjue-Wang/FactSeg/blob/master/imgs/myicon.jpg?raw=true">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="app.css">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110862391-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110862391-3');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                LoveCS: <span style="color: red">C</span>ross <span style="color: red">S</span>ensor domain adaptation for high spatial resolution urban <span style="color: red">L</span>and-c<span style="color: red">OVE</span>r mapping: From airborne to spaceborne imagery</br>
+                <small>
+                    RSE 2022
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://junjue-wang.github.io/homepage/">
+                            Junjue Wang
+                        </a>
+                    </li>
+                    <li>
+                        Ailong Ma
+                    </li>
+                    <li>
+                        <a href="http://rsidea.whu.edu.cn/">
+                          Yanfei Zhong
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://zhuozheng.top/">
+                            Zhuo Zheng
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.lmars.whu.edu.cn/prof_web/zhangliangpei/rs/index.html">
+                            Liangpei Zhang
+                        </a>
+                    </li>
+                </ul>
+                <small>
+
+                </small>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0034425722001729">
+                            <image src="src/LoveCS/paper_overview.png" height="120px"></image><br>
+                                <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/Junjue-Wang/LoveCS">
+                            <image src="src/github_pad.png" height="120px"></image><br>
+                                <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://pan.baidu.com/s/1YnsMFDOMBGO-oz_PAUkuFQ?pwd=2333">
+                            <image src="src/LoveCS/product.png" height="120px"></image><br>
+                            <h4><strong>Product</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <image src="src/LoveCS/framework.png" class="img-responsive" alt="overview"><br></image>
+                <p class="text-justify">This is follow-up work of our <a href="https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/4e732ced3463d06de0ca9a15b6153677-Abstract-round2.html" style="color: #0000cc">LoveDA (NeurIPS 2021)</a>
+                    </p>
+                    <p class="text-justify">
+                        Urban land-cover information is essential for resource allocation and sustainable urban development. Recently, deep learning algorithms have shown promising results in land-cover mapping with high spatial resolution (HSR) imagery. However, the limitation of the annotation and the divergence of the multi-sensor images always challenge the transferability of deep learning, thus hindering city-level or national-level mapping. In this paper, we propose a scheme to leverage small-scale airborne images with labels (source) for unlabeled large-scale spaceborne image (target) classification. Considering the sensor characteristics, a Cross-Sensor Land-cOVEr framework, called LoveCS, is introduced to address the difficulties of the spatial resolution inconsistency and spectral differences. As for the structural design, cross-sensor normalization is proposed to automatically learn sensor-specific normalization weights, thereby narrowing the spectral differences hierarchically. Furthermore, a dense multi-scale decoder is proposed to effectively fuse the multi-scale features from different sensors. As for the model optimization, self-training domain adaptation is adopted, and multi-scale pseudo-labeling is proposed to reduce the scale divergence brought by the spatial resolution inconsistency. The effectiveness of LoveCS was tested on data from the three cities of Nanjing, Changzhou, and Wuhan in China. The comprehensive results all show that LoveCS is superior to the existing domain adaptation methods in cross-sensor tasks, and has good generalizability. Compared with the existing land-cover products, the obtained results have the highest accuracy and spatial resolution (1.0 m). Overall, LoveCS provides a new perspective for large-scale land-cover mapping based on limited HSR images.
+                    </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Experiments
+                </h3>
+                <image src="src/LoveCS/result.png" class="img-responsive" alt="overview"><br></image>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <div class="form-group col-md-20 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+
+@article{WANG2022113058,
+    title = {Cross-sensor domain adaptation for high spatial resolution urban land-cover mapping: From airborne to spaceborne imagery},
+    journal = {Remote Sensing of Environment},
+    volume = {277},
+    pages = {113058},
+    year = {2022},
+    issn = {0034-4257},
+    doi = {https://doi.org/10.1016/j.rse.2022.113058},
+    url = {https://www.sciencedirect.com/science/article/pii/S0034425722001729},
+    author = {Junjue Wang and Ailong Ma and Yanfei Zhong and Zhuo Zheng and Liangpei Zhang}}
+@inproceedings{wang2021loveda,
+    title={Love{DA}: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation},
+    author={Junjue Wang and Zhuo Zheng and Ailong Ma and Xiaoyan Lu and Yanfei Zhong},
+    booktitle={Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks},
+    editor = {J. Vanschoren and S. Yeung},
+    year={2021},
+    volume = {1},
+    pages = {},
+    url={https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Paper-round2.pdf}}
+</textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

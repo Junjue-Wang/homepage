@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>LoveDA</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- <base href="/"> -->
+
+    <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <link rel="icon" type="image/png" href="https://github.com/Junjue-Wang/FactSeg/blob/master/imgs/myicon.jpg?raw=true">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="app.css">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110862391-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110862391-3');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                LoveDA: A Remote sensing <span style="color: red">L</span>and-c<span style="color: red">ove</span>r Dataset for <span style="color: red">D</span>omain <span style="color: red">A</span>daptive Semantic Segmentation
+<!--                FactSeg: <span style="color: red">F</span>oreground <span style="color: red">Act</span>ivation Driven Small Object Semantic <span style="color: red">Seg</span>mentation in Large-Scale-->
+                Remote Sensing Imagery </br>
+                <small>
+                    NeurIPS 2021
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="http://junjuewang.top/">
+                            Junjue Wang
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="http://zhuozheng.top/">
+                            Zhuo Zheng
+                        </a>
+                    </li>
+
+                    <li>
+                        Ailong Ma
+                    </li>
+                    <li>
+                        Xiaoyan Lu
+                    </li>
+                    <li>
+                        <a href="http://rsidea.whu.edu.cn/">
+                            Yanfei Zhong
+                        </a>
+                    </li>
+                </ul>
+                <small>
+
+                </small>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://www.researchgate.net/publication/355390292_LoveDA_A_Remote_Sensing_Land-Cover_Dataset_for_Domain_Adaptive_Semantic_Segmentation">
+                            <image src="src/LoveDA/paper_overview.png" height="120px"></image><br>
+                                <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/Junjue-Wang/LoveDA">
+                            <image src="src/github_pad.png" height="120px"></image><br>
+                                <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://doi.org/10.5281/zenodo.5706578">
+                            <image src="src/LoveDA/loveda_logo.png" height="120px"></image><br>
+                            <h4><strong>Dataset</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <image src="src/LoveDA/LoveDA.png" class="img-responsive" alt="overview"><br></image>
+                    </p>
+                    <p class="text-justify">
+                        Deep learning approaches have shown promising results in remote sensing high
+                        spatial resolution (HSR) land-cover mapping. However, urban and rural scenes
+                        can show completely different geographical landscapes, and the inadequate generalizability of these algorithms hinders city-level or national-level mapping. Most
+                        of the existing HSR land-cover datasets mainly promote the research of learning semantic representation, thereby ignoring the model transferability. In this
+                        paper, we introduce the Land-cOVEr Domain Adaptive semantic segmentation
+                        (LoveDA) dataset to advance semantic and transferable learning. The LoveDA
+                        dataset contains 5987 HSR images with 166768 annotated objects from three different cities. Compared to the existing datasets, the LoveDA dataset encompasses
+                        two domains (urban and rural), which brings considerable challenges due to the:
+                        <b>1) multi-scale objects; 2) complex background samples; and 3) inconsistent class
+                            distributions.</b> The LoveDA dataset is suitable for both land-cover semantic segmentation and unsupervised domain adaptation (UDA) tasks. Accordingly, we
+                        benchmarked the LoveDA dataset on eleven semantic segmentation methods and
+                        eight UDA methods. Some exploratory studies including multi-scale architectures
+                        and strategies, additional background supervision, and pseudo-label analysis were
+                        also carried out to address these challenges.
+
+                    </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Highlights
+                </h3>
+
+                <p class="text-justify">
+                <ol>
+                    <li>5987 high spatial resolution (0.3 m) remote sensing images from Nanjing, Changzhou, and Wuhan</li>
+                    <li>Focus on different geographical environments between Urban and Rural</li>
+                    <li>Advance both semantic segmentation and domain adaptation tasks</li>
+                    <li>Three considerable challenges: <br>
+                        - Multi-scale objects <br>
+                        - Complex background samples <br>
+                        - Inconsistent class distributions.
+                    </li>
+                </ol>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Statistics for LoveDA
+                </h3>
+                <image src="src/LoveDA/overall_statics.png" class="img-responsive" alt="overview"><br></image>
+                <image src="src/LoveDA/statics_diff.png" class="img-responsive" alt="overview"><br></image>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Contest
+                </h3>
+                We have held two contests that you may be interested in:
+<!--                <image src="https://github.com/Junjue-Wang/resources/blob/main/LoveDA/loveda_logo.png?raw=true" class="img-responsive" style="width: 10%; margin-left: 0px" ></image>-->
+                <ul>
+                    <li><a href="https://competitions.codalab.org/competitions/35865"> <b>Semantic Segmentation</b></a> <br></li>
+                    <li><a href="https://competitions.codalab.org/competitions/35874"> <b>Unsupervised Domain Adaptation</b></a></li>
+                </ul>
+                Feel free to design your own models, and we are looking forward to your exciting results!
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <div class="form-group col-md-20 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+    @inproceedings{wang2021loveda,
+        title={Love{DA}: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation},
+        author={Junjue Wang and Zhuo Zheng and Ailong Ma and Xiaoyan Lu and Yanfei Zhong},
+        booktitle={Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks},
+        editor = {J. Vanschoren and S. Yeung},
+        year={2021},
+        volume = {1},
+        pages = {},
+        url={https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Paper-round2.pdf}
+    }
+    @ARTICLE{FactSeg,
+        author={Ma Ailong, Wang Junjue, Zhong Yanfei and Zheng Zhuo},
+        journal={IEEE Transactions on Geoscience and Remote Sensing},
+        title={FactSeg: Foreground Activation Driven Small Object Semantic Segmentation in Large-Scale Remote Sensing Imagery},
+        year={2021},
+        volume={},
+        number={},
+        pages={1-16},
+        doi={10.1109/TGRS.2021.3097148}
+    }
+
+</textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

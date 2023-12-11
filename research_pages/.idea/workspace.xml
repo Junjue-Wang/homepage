@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6432ae95-4178-447a-b622-31552b3aab52" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1zRFPCCsXIvqvVw6zGYTAaPYqWR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/LoveCS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DoneSpace\Junjue-Wang\src\LoveCS" />
+      <recent name="D:\DoneSpace\Junjue-Wang" />
+      <recent name="D:\DoneSpace\Junjue-Wang\src\LoveDA" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\DoneSpace\Junjue-Wang\src\FactSeg" />
+      <recent name="D:\DoneSpace\Junjue-Wang\src" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6432ae95-4178-447a-b622-31552b3aab52" name="Default Changelist" comment="" />
+      <created>1634102966812</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634102966812</updated>
+      <workItem from="1634102974795" duration="152000" />
+      <workItem from="1634474937862" duration="7629000" />
+      <workItem from="1634823862620" duration="1148000" />
+      <workItem from="1635401999070" duration="851000" />
+      <workItem from="1636460132652" duration="1236000" />
+      <workItem from="1636549535177" duration="52000" />
+      <workItem from="1642038226053" duration="520000" />
+      <workItem from="1648527508509" duration="39000" />
+      <workItem from="1652266231610" duration="1500000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2725" y="124" key="FileChooserDialogImpl" timestamp="1648527551564">
+      <screen x="1920" y="-189" width="2048" height="1112" />
+    </state>
+    <state x="2725" y="124" key="FileChooserDialogImpl/0.0.1920.1040/1920.-189.2048.1112@1920.-189.2048.1112" timestamp="1648527551564" />
+  </component>
+</project>

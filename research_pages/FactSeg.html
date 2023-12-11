@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>FactSeg</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- <base href="/"> -->
+
+    <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <link rel="icon" type="image/png" href="https://github.com/Junjue-Wang/FactSeg/blob/master/imgs/myicon.jpg?raw=true">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="app.css">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110862391-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110862391-3');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                FactSeg: <span style="color: red">F</span>oreground <span style="color: red">Act</span>ivation Driven Small Object Semantic <span style="color: red">Seg</span>mentation in Large-Scale
+                Remote Sensing Imagery </br>
+                <small>
+                    TGRS 2021
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                          Ailong Ma
+                    </li>
+                    <li>
+                        <a href="https://junjue-wang.github.io/homepage/">
+                          Junjue Wang
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://rsidea.whu.edu.cn/">
+                          Yanfei Zhong
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://zhuozheng.top/">
+                            Zhuo Zheng
+                        </a>
+                    </li>
+                </ul>
+                <small>
+
+                </small>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://ieeexplore.ieee.org/document/9497514">
+                            <image src="src/FactSeg/paper_overview.png" height="120px"></image><br>
+                                <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/Junjue-Wang/FactSeg">
+                            <image src="src/github_pad.png" height="120px"></image><br>
+                                <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <image src="src/FactSeg/framework.png" class="img-responsive" alt="overview"><br></image>
+                <p class="text-justify">This is follow-up work of our <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Zheng_Foreground-Aware_Relation_Network_for_Geospatial_Object_Segmentation_in_High_Spatial_CVPR_2020_paper.pdf" style="color: #0000cc">FarSeg (CVPR2020)</a>
+                    </p>
+                    <p class="text-justify">
+                        The small object semantic segmentation task is
+                        aimed at automatically extracting key objects from high resolution
+                        remote sensing (HRS) imagery. Compared with the
+                        <em>large-scale</em> coverage areas for remote sensing imagery, the key
+                        objects such as cars, ships, etc. in HRS imagery often contain <em>only
+                        a few pixels</em>. In this paper, to tackle this problem, the foreground
+                        activation (FA) driven small object semantic segmentation (FactSeg) framework is proposed from perspectives of <b>structure and
+                        optimization</b>. In the structure design, FA object representation is
+                        proposed to enhance the awareness of the weak features in small
+                        objects. The FA object representation framework is made up of a
+                        dual-branch decoder and collaborative probability (CP) loss. In
+                        the dual-branch decoder, the FA branch is designed to activate the
+                        small object features (activation), as well as suppress the largescale
+                        background, and the semantic refinement (SR) branch is
+                        designed to further distinguish small objects (refinement). The
+                        CP loss is proposed to effectively combine the activation and
+                        refinement outputs of the decoder under the CP hypothesis.
+                        During the collaboration, the weak features of the small objects
+                        are enhanced with the activation output, and the refined output
+                        can be viewed as the refinement of the binary outputs. In the
+                        optimization stage, small object mining (SOM) based network
+                        optimization is applied to automatically select effective samples,
+                        to refine the direction of the optimization, while addressing the
+                        imbalanced sample problem between the small objects and the
+                        large-scale background. The experimental results obtained with
+                        two benchmark HRS imagery segmentation datasets demonstrate
+                        that the proposed framework <b>outperforms the state-of-the-art
+                        semantic segmentation methods, and achieves a good tradeoff
+                        between accuracy and efficiency.</b>
+
+                    </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Experiments on iSAID
+                </h3>
+                <image src="src/FactSeg/result.png" class="img-responsive" alt="overview"><br></image>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <div class="form-group col-md-20 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+
+@ARTICLE{FactSeg,
+    author={Ma Ailong, Wang Junjue, Zhong Yanfei and Zheng Zhuo},
+    journal={IEEE Transactions on Geoscience and Remote Sensing},
+    title={FactSeg: Foreground Activation Driven Small Object Semantic Segmentation in Large-Scale Remote Sensing Imagery},
+    year={2021},
+    volume={},
+    number={},
+    pages={1-16},
+    doi={10.1109/TGRS.2021.3097148}
+}
+@inproceedings{zheng2020foreground,
+  title={Foreground-Aware Relation Network for Geospatial Object Segmentation in High Spatial Resolution Remote Sensing Imagery},
+  author={Zheng, Zhuo and Zhong, Yanfei and Wang, Junjue and Ma, Ailong},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={4096--4105},
+  year={2020}
+}
+</textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
