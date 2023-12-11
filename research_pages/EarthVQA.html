@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>EarthVQA</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- <base href="/"> -->
+
+    <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <link rel="icon" type="image/png" href="https://github.com/Junjue-Wang/FactSeg/blob/master/imgs/myicon.jpg?raw=true">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="app.css">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110862391-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110862391-3');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                EarthVQA: Towards Queryable <span style="color: red">Earth</span> via Relational Reasoning-Based Remote Sensing
+                <span style="color: red">V</span>isual <span style="color: red">Q</span>uestion <span style="color: red">A</span>nswering</br>
+                <small>
+                    AAAI 2024 (Accepted)
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://junjue-wang.github.io/homepage/">
+                            Junjue Wang
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://zhuozheng.top/">
+                            Zhuo Zheng
+                        </a>
+                    </li>
+                    <li>
+                          Zihang Chen
+                    </li>
+                    <li>
+                          Ailong Ma
+                    </li>
+                    <li>
+                        <a href="http://rsidea.whu.edu.cn/">
+                          Yanfei Zhong
+                        </a>
+                    </li>
+
+                </ul>
+                <small>
+
+                </small>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://junjue-wang.github.io/homepage/">
+                            <image src="src/EarthVQA/paper_overview.png" height="120px"></image><br>
+                                <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+
+<!--                    <li>-->
+<!--                        <a href="https://junjue-wang.github.io/homepage/">-->
+<!--                            <image src="src/github_pad.png" height="120px"></image><br>-->
+<!--                                <h4><strong>Code</strong></h4>-->
+<!--                        </a>-->
+<!--                    </li>-->
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <image src="src/EarthVQA/dataset_vis1.png" class="img-responsive" alt="overview"><br></image>
+                <image src="src/EarthVQA/framework.png" class="img-responsive" alt="overview"><br></image>
+                <p class="text-justify">This is follow-up work of our <a href="https://junjuewang.top/research_pages/LoveDA" style="color: #0000cc">LoveDA (NeurIPS2021)</a>
+                    </p>
+                    <p class="text-justify">
+                        Earth vision research typically focuses on extracting geospatial object locations and categories but
+                        neglects the exploration of relations between objects and comprehensive reasoning.
+                        Based on city planning needs, we develop a multi-modal multi-task VQA dataset (<b>EarthVQA</b>) to advance relational relational-based judging, counting, and comprehensive analysis.
+                        The EarthVQA dataset contains 6000 images, corresponding semantic masks, and 208,593 QA pairs with urban and rural governance requirements embedded.
+                        As objects are the basis for complex relational reasoning, we propose a Semantic OBject Awareness framework (<b>SOBA</b>) to advance VQA in an object-centric way.
+                        To preserve refined spatial locations and semantics, SOBA leverages a segmentation network for object semantics generation.
+                        The object-guided attention aggregates object interior features via pseudo masks, and bidirectional cross attention further models
+                        object external relations hierarchically.
+                        To optimize object counting, we propose a numerical difference loss that dynamically adds difference penalties, unifying the classification and regression tasks.
+                        Experimental results show that SOBA outperforms both advanced general and remote sensing methods.
+                        We believe this dataset and framework provide a strong benchmark for Earth vision's complex analysis.
+
+                    </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Experiments on EarthVQA
+                </h3>
+                <image src="src/EarthVQA/result.png" class="img-responsive" alt="overview"><br></image>
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <pre data-role="codeBlock" data-info="text" class="language-text">
+@inproceedings{wang2024earthvqa,
+                    title={Earth{VQA}: Towards Queryable Earth via Relational Reasoning-Based Remote Sensing Visual Question Answering},
+                    author={Junjue Wang and Zhuo Zheng and Zihang Chen and Ailong Ma and Yanfei Zhong},
+                    booktitle={Proceedings of the Thirty-Eighth AAAI Conference on Artificial Intelligence},
+                    year={2024},
+                    volume = {1},
+                    pages = {},
+                }
+@inproceedings{wang2021loveda,
+                    title={Love{DA}: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation},
+                    author={Junjue Wang and Zhuo Zheng and Ailong Ma and Xiaoyan Lu and Yanfei Zhong},
+                    booktitle={Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks},
+                    editor = {J. Vanschoren and S. Yeung},
+                    year={2021},
+                    volume = {1},
+                    pages = {},
+                    url={https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Paper-round2.pdf}
+                }
+                </pre>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgments
+                </h3>
+                This work was supported by National Natural Science Foundation of China under Grant Nos. 42325105, 42071350, and 42171336.
+                <br><br>
+                The website template was borrowed from <a href="https://bowenc0221.github.io/">Bowen Cheng</a> and <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>
