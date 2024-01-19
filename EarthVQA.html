@@ -1,318 +1,220 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!DOCTYPE html>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>EarthVQA</title>
+
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="css/main.css" rel="stylesheet">
-    <link rel="shortcut icon" href="img/myicon.ico" type="image/x-icon" />
-    <title>Junjue Wang's Page</title>
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- <base href="/"> -->
+
+    <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <link rel="icon" type="image/png" href="https://github.com/Junjue-Wang/FactSeg/blob/master/imgs/myicon.jpg?raw=true">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110862391-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110862391-3');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
 </head>
+
 <body>
-<div id="main_div" class="bg-light text-dark">
-    <div class="bio">
-        <div class="row">
-            <div class="col-md-12">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td width="150px">
-                            <p align="center">
-                                <img src="img/myphoto.jpg" style="width: 100%">
-                            </p>
-                        </td>
-                        <td style="float: left; margin-left: 20px">
-                            <h2>Junjue Wang 王俊珏</h2>
-                            <h5>PhD Student</h5>
-                            <h5>LIESMARS, Wuhan University, Hubei, China</h5>
-                            <h5>E-mail: kingdrone@whu.edu.cn</h5>
-                            <div style="margin-top:10px">
-                                <a href="https://www.researchgate.net/profile/Junjue_Wang2"><img src="img/researchgate.png" height="32" width="32" ></a>
-                                <a href="https://scholar.google.com/citations?hl=zh-CN&user=H58gKSAAAAAJ"><img src="img/google_sch.png" height="32" width="32"/></a>
-                                <a href="https://orcid.org/0000-0002-9500-3399"><img src="img/orcid.png" height="32" width="32"/></a>
-                                <a href="https://github.com/Junjue-Wang"><img src="img/github.png" height="32" width="32"/></a>
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+<div class="container" id="main">
+    <div class="row">
+        <h1 class="col-md-12 text-center">
+            EarthVQA: Towards Queryable <span style="color: red">Earth</span> via Relational Reasoning-Based Remote Sensing
+            <span style="color: red">V</span>isual <span style="color: red">Q</span>uestion <span style="color: red">A</span>nswering</br>
+            <small>
+                AAAI 2024 (Accepted)
+            </small>
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <ul class="list-inline">
+                <li>
+                    <a href="https://junjue-wang.github.io/homepage/">
+                        Junjue Wang
+                    </a>
+                </li>
+                <li>
+                    <a href="http://zhuozheng.top/">
+                        Zhuo Zheng
+                    </a>
+                </li>
+                <li>
+                    Zihang Chen
+                </li>
+                <li>
+                    Ailong Ma
+                </li>
+                <li>
+                    <a href="http://rsidea.whu.edu.cn/">
+                        Yanfei Zhong
+                    </a>
+                </li>
 
-            <div class="col-md-12" style="margin-top: 20px">
-                <p>I am a PhD student of photogrammetry and remote sensing at State Key Laboratory of Information Engineering in Surveying, Mapping and Remote Sensing (LIESMARS), Wuhan University.
-                    I'm now a member of <a href="http://rsidea.whu.edu.cn/">RSIDEA group</a>, advised by Prof. <a href="http://rsidea.whu.edu.cn/">Yanfei Zhong</a> and <a href="http://www.lmars.whu.edu.cn/prof_web/zhangliangpei/rs/index.html">Liangpei Zhang</a>.
-                </p>
-                <p>
-                    My interests include multi-modal remote sensing processing and computer vision, focusing on creative datasets and algorithms for various applications,
-                    such as large-scale land-cover mapping, argriculture analysis, rural/urban planning, and landslide detection, etc.
-                </p>
-                <p style="vertical-align: center; color: rgb(255,0,0)">I am looking for a postdoc or teaching position. Feel free to contact me.<img src="img/simle-icon.png" height="30" width="30"/></p>
+            </ul>
+            <small>
 
-            </div>
-
+            </small>
         </div>
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Recent News</h2>
-                <p><b>[2024.01]</b> Our <a href="https://github.com/Junjue-Wang/LoveNAS">LoveNAS</a> was accepted by ISPRS.</p>
-                <p><b>[2023.12]</b> Our <a href="https://Junjue-Wang.github.io/homepage/EarthVQA">EarthVQA</a> was accepted by AAAI 2024. </p>
-                <p><b>[2023.09]</b> Our <a href="https://www.researchgate.net/publication/360484883_Cross-sensor_domain_adaptation_for_high_spatial_resolution_urban_land-cover_mapping_From_airborne_to_spaceborne_imagery">LoveCS</a> has become ESI highly cited paper (Top 1%). </p>
-                <p><b>[2023.07]</b> Our <a href="https://ieeexplore.ieee.org/abstract/document/10188509/">FarSeg++</a> has been accepted by TPAMI'2023.</p>
-                <p><b>[2022.09]</b> Awarded with 2022 Graduate Academic Innovation First Prize, Wuhan University. (<a href="https://gs.whu.edu.cn/content.jsp?urltype=news.NewsContentUrl&wbtreeid=1057&wbnewsid=9971">“武汉大学研究生学术创新奖”一等奖</a>)</p>
-                <p><b>[2022.07]</b> Our <a href="https://github.com/Junjue-Wang/CapFormer">CapFormer</a> has become Top10 in IGARSS 2022 Student Paper Contest.</p>
-                <p><b>[2022.06]</b> We won 1<sup>st</sup> Place in <a href="https://www.iarai.ac.at/landslide4sense/challenge/">2022 IJCAI LandSlideSense Challenge</a>.</p>
-                <p><b>[2022.05]</b> <a href="https://www.researchgate.net/publication/360484883_Cross-sensor_domain_adaptation_for_high_spatial_resolution_urban_land-cover_mapping_From_airborne_to_spaceborne_imagery">LoveCS</a> was accepted by RSE'2022 and code was released <a href="https://github.com/Junjue-Wang/LoveCS">here</a>.</p>
-                <p><b>[2022.03]</b> We won 1<sup>st</sup> Place (1/1149) in <a href="https://tianchi.aliyun.com/competition/entrance/531945/tab/292">2022 Ali Tianchi Real World Image Forgery Localization Challenge</a> and the solution was shared <a href="https://github.com/Junjue-Wang/Rank1-Ali-Tianchi-Real-Scene-Tampering-Image-Detection-Challenge">here</a>.</p>
-                <!--        <p><b>[2022.03]</b> Our <a href="https://www.researchgate.net/publication/342105878_RSNet_The_Search_for_Remote_Sensing_Deep_Neural_Networks_in_Recognition_Tasks?_sg=ygVHXE0RkN6ek8wXl_qQzSD7qCabtSpXYfukmQ7zgnCk5Ic7gO2C1RAe8O8Hho4PUXnvgmh-qpxM8GJEeDV75n-kEB_v5qn542f9gYlp.ndm2Tkvcf8NsDMmsvZb5_CaFMRjr100VWDiPkiLHfe_QtHvNKAAeQnuCLtuRSfZya1ZFOU-sI8-gPjVMg-4J4Q">RSNet</a> has become ESI highly cited paper (Top 1%). </p>-->
-                <!--        <p><b>[2021.10]</b> <a href="https://codalab.lisn.upsaclay.fr/competitions/421">LoveDA Semantic Segmentation</a> and <a href="https://codalab.lisn.upsaclay.fr/competitions/424">Unsupervised Domain Adaptation</a> Contests are held on Codalab.</p>-->
-                <!--      <p><b>[2021.10]</b> The Code and Dataset of LoveDA (NeurIPS'2021) are released  <a href="https://github.com/Junjue-Wang/LoveDA">here</a>.</p>-->
-                <!--      <p><b>[2021.10]</b> The Code of FactSeg (TGRS'2021) is released  <a href="https://github.com/Junjue-Wang/FactSeg">here</a>.</p>-->
-                <!--      <p><b>[2021.09]</b> The FactSeg is accepted by TGRS.</p>-->
-                <!--      <p><b>[2021.03]</b> Our team win the 4th place in 2021 IEEE GRSS Data Fusion Contest, Track: Multitemporal Semantic Change Detection.</p>-->
-            </div>
-
-            <div class="col-md-12">
-                <h2>Selected Publications</h2>
-                <div class="article_content">
-                    <p class="article_title">LoveNAS: Towards Multi-Scene Land-Cover Mapping via Hierarchical Searching Adaptive Network</p>
-                    <p class="article_author"><b>Junjue Wang</b>, Yanfei Zhong, Ailong Ma, Zhuo Zheng, Yuting Wan, Liangpei Zhang</p>
-                    <p class="article_journal">ISPRS Journal of Photogrammetry and Remote Sensing, 2024 (Accepted)</p>
-                    <div class="flex-shrink-0">
-                        <a href="https://junjuewang.top/">Paper</a> &nbsp;
-                        <a href="https://github.com/Junjue-Wang/LoveNAS">Code</a> &nbsp;
-                    </div>
-                </div>
-
-
-                <div class="article_content">
-                    <p class="article_title">EarthVQA: Towards Queryable Earth via Relational Reasoning-based Remote Sensing Visual Question Answering</p>
-                    <p class="article_author"><b>Junjue Wang</b>, Zhuo Zheng, Zihang Chen, Ailong Ma, Yanfei Zhong</p>
-                    <p class="article_journal">The 38th Annual AAAI Conference on Artificial Intelligence, 2024 (Accepted)</p>
-                    <div class="flex-shrink-0">
-                        <a href="https://www.researchgate.net/publication/376519677_EarthVQA_Towards_Queryable_Earth_via_Relational_Reasoning-based_Remote_Sensing_Visual_Question_Answering">Paper</a> &nbsp;
-                        <a href="https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-01-08/2q83o0t/EarthVQA-video.mp4">Video</a> &nbsp;
-                        <a href="https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-01-08/qd43oo1/Poster-AAAI.pdf">Poster</a> &nbsp;
-                    </div>
-                </div>
-
-
-                <div class="article_content">
-                    <p class="article_title">Cross-sensor domain adaptation for high spatial resolution urban land-cover mapping: From airborne to spaceborne imagery <span style="color:#FF0000";>(ESI highly cited paper)</span></p>
-                    <p class="article_author"><b>Junjue Wang</b>, Ailong Ma, Yanfei Zhong, Zhuo Zheng, Liangpei Zhang</p>
-                    <p class="article_journal">Remote Sensing of Environment (RSE), 2022</p>
-                    <div class="flex-shrink-0">
-                        <a href="https://www.researchgate.net/publication/360484883_Cross-sensor_domain_adaptation_for_high_spatial_resolution_urban_land-cover_mapping_From_airborne_to_spaceborne_imagery">Paper</a> &nbsp;
-                        <a href="https://github.com/Junjue-Wang/LoveCS">Code</a> &nbsp;
-                        <a href="https://pan.baidu.com/s/1YnsMFDOMBGO-oz_PAUkuFQ?pwd=2333">Product</a> &nbsp;
-                    </div>
-                </div>
-
-
-                <div class="article_content">
-                    <p class="article_title">LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation</p>
-                    <p class="article_author"><b>Junjue Wang</b>, Zhuo Zheng, Ailong Ma, Yanfei Zhong</p>
-                    <p class="article_journal">Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (NeurIPS), 2021</p>
-                    <div class="flex-shrink-0">
-                        <a href="https://www.researchgate.net/publication/355390292_LoveDA_A_Remote_Sensing_Land-Cover_Dataset_for_Domain_Adaptive_Semantic_Segmentation?_sg%5B0%5D=6wXVE-p1zxMXGPBlbejDqXjV8tsg0MXN71kPrxezXyRgQm02D3OciHvMpt_wQZ_ydXife2rUkXEaPGBWFmJLx39uCAVN6xj7sn5UfqlQ.Ey_uv26Ax71LzLalgYHKtHduCMuqDBT8aAFpKwEOPtQCqyZICYariQGxpTpSwbavprpk8e2MWTyU9Po7cEFHSw">Paper</a>&nbsp;
-                        <a href="https://slideslive.com/38969542/loveda-a-remote-sensing-landcover-dataset-for-domain-adaptive-semantic-segmentation">Video</a>&nbsp;
-                        <a href="https://github.com/Junjue-Wang/LoveDA">Code</a>&nbsp;
-                        <a href="https://zenodo.org/record/5706578#.Yi2m1-hByUk">Data</a>&nbsp;
-                    </div>
-                </div>
-
-                <div class="article_content">
-                    <p class="article_title">FactSeg: Foreground Activation Driven Small Object Semantic
-                        Segmentation in Large-Scale Remote Sensing Imagery</p>
-                    <p class="article_author">Ailong Ma, <b>Junjue Wang</b>, Yanfei Zhong, Zhuo Zheng</p>
-                    <p class="article_journal">IEEE Transactions on Geoscience and Remote Sensing (TGRS), 2022</p>
-                    <div class="flex-shrink-0">
-                        <a href="https://www.researchgate.net/publication/353357122_FactSeg_Foreground_Activation_Driven_Small_Object_Semantic_Segmentation_in_Large-Scale_Remote_Sensing_Imagery">Paper</a>&nbsp;
-                        <a href="https://github.com/Junjue-Wang/FactSeg">Code</a>&nbsp;
-                    </div>
-                </div>
-
-
-                <div class="article_content">
-                    <p class="article_title">RSNet: The Search for Remote Sensing Deep
-                        Neural Networks in Recognition Tasks <span style="color:#FF0000";>(ESI highly cited paper)</span></p>
-                    <p class="article_author"><b>Junjue Wang</b>, Yanfei Zhong, Zhuo Zheng, Ailong Ma, Liangpei Zhang</p>
-                    <p class="article_journal">IEEE Transactions on Geoscience and Remote Sensing (TGRS), 2021</p>
-                    <div class="flex-shrink-0"><a href="https://www.researchgate.net/publication/342105878_RSNet_The_Search_for_Remote_Sensing_Deep_Neural_Networks_in_Recognition_Tasks?_sg=ygVHXE0RkN6ek8wXl_qQzSD7qCabtSpXYfukmQ7zgnCk5Ic7gO2C1RAe8O8Hho4PUXnvgmh-qpxM8GJEeDV75n-kEB_v5qn542f9gYlp.ndm2Tkvcf8NsDMmsvZb5_CaFMRjr100VWDiPkiLHfe_QtHvNKAAeQnuCLtuRSfZya1ZFOU-sI8-gPjVMg-4J4Q">Paper</a></div>
-                </div>
-
-
-                <!--      <div class="article_content">-->
-                <!--        <p class="article_title">SceneNet: Remote sensing scene classification deep learning-->
-                <!--          network using multi-objective neural evolution architecture search</p>-->
-                <!--        <p class="article_author">Ailong Ma, Yuting Wan, Yanfei Zhong, <b>Junjue Wang</b>, Liangpei Zhang</p>-->
-                <!--        <p class="article_journal">ISPRS Journal of Photogrammetry and Remote Sensing (ISPRS), 2021</p>-->
-                <!--        <div class="flex-shrink-0"><a href="https://www.researchgate.net/publication/348354783_SceneNet_Remote_sensing_scene_classification_deep_learning_network_using_multi-objective_neural_evolution_architecture_search">Paper</a></div>-->
-                <!--      </div>-->
-
-                <!--        <div class="article_content">-->
-                <!--          <p class="article_title">Foreground-Aware Relation Network for Geospatial Object Segmentation in High Spatial Resolution Remote Sensing Imagery</p>-->
-                <!--          <p class="article_author">Zhuo Zheng, Yanfei Zhong, <b>Junjue Wang</b>, Ailong Ma</p>-->
-                <!--          <p class="article_journal">IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2020</p>-->
-                <!--          <div class="flex-shrink-0">-->
-                <!--            <a href="http://openaccess.thecvf.com/content_CVPR_2020/papers/Zheng_Foreground-Aware_Relation_Network_for_Geospatial_Object_Segmentation_in_High_Spatial_CVPR_2020_paper.pdf">Paper</a>&nbsp;-->
-                <!--            <a href="https://github.com/Z-Zheng/FarSeg">Code</a>&nbsp;-->
-                <!--          </div>-->
-                <!--        </div>-->
-
-            </div>
-
-
-
-
-            <div class="col-md-12">
-                <h2>Award</h2>
-                <div class="article_content">
-                    <p><b>[2022.9]</b></p>
-                    <p class="article_title">2022 Graduate Academic Innovation First Prize, Wuhan University (“武汉大学研究生学术创新奖”一等奖)</p>
-
-                    <div class="flex-shrink-0">
-                        <a href="https://gs.whu.edu.cn/content.jsp?urltype=news.NewsContentUrl&wbtreeid=1057&wbnewsid=9971">Announcement</a>
-                    </div>
-                </div>
-                <div class="article_content">
-                    <p><b>[2022.4-2022.6]</b></p>
-                    <p class="article_title">2022 IJCAI LandSlide4Sense CDCEO workshop Challenge</p>
-                    <div class="article_journal">
-                        <p><i class="fas fa-trophy text-warning"></i>
-                            1<sup>st</sup> Place</p></div>
-                    <div class="flex-shrink-0"><a href="https://www.iarai.ac.at/landslide4sense/challenge/">Website</a>&nbsp;
-                        <a href="https://youtu.be/SiBjK9cOOB0">Video</a>&nbsp;
-                        <a href="https://www.researchgate.net/publication/363366843_Progressive_Label_Refinement-Based_Distribution_Adaptation_Framework_for_Landslide_Detection">Paper</a>&nbsp;
-                    </div>
-                </div>
-                <div class="article_content">
-                    <p><b>[2022.2-2022.3]</b></p>
-                    <p class="article_title">2022 Ali Tianchi Real World Image Forgery Localization Challenge</p>
-                    <div class="article_journal">
-                        <p><i class="fas fa-trophy text-warning"></i>
-                            1<sup>st</sup> Place (1/1149)</p></div>
-                    <div class="flex-shrink-0"><a href="https://tianchi.aliyun.com/competition/entrance/531945/tab/292">Website</a>&nbsp;
-                        <a href="https://github.com/Junjue-Wang/Rank1-Ali-Tianchi-Real-Scene-Tampering-Image-Detection-Challenge">Solution</a>&nbsp;
-                    </div>
-                </div>
-                <div class="article_content">
-                    <p><b>[2020.10-2020.12]</b></p>
-                    <p class="article_title">2021 IEEE GRSS Data Fusion Contest, Track: Multitemporal Semantic Change Detection</p>
-                    <div class="article_journal">
-                        <p><i class="fas fa-trophy text-warning"></i>
-                            4<sup>th</sup> Place</p></div>
-                    <div class="flex-shrink-0">
-                        <a href="https://www.grss-ieee.org/community/technical-committees/2021-ieee-grss-data-fusion-contest-track-msd/">Website</a>&nbsp;
-                        <a href="https://www.grss-ieee.org/community/technical-committees/2021-ieee-grss-data-fusion-contest-results/">Announcement</a>&nbsp;
-                    </div>
-                </div>
-
-                <div class="article_content">
-                    <p><b>[2020.03-2020.05]</b></p>
-                    <p class="article_title">SpaceNet 6 EarthVision workshop challenge at CVPR 2020</p>
-                    <div class="article_journal">
-                        <p><i class="fas fa-trophy text-warning"></i>
-                            Top Graduate Award (__EVER__)</p></div>
-                    <div class="flex-shrink-0">
-                        <a href="https://spacenet.ai/sn6-challenge/">Website</a>&nbsp;
-                        <a href="https://medium.com/the-downlinq/spacenet-6-announcing-the-winners-df817712b515">Announcement</a>&nbsp;
-                        <a href="https://www.topcoder.com/challenges/30116975?tab=submissions">Leaderboard</a>&nbsp;
-
-                    </div>
-                </div>
-
-                <div class="article_content">
-                    <p><b>[2019.10-2019.12]</b></p>
-                    <p class="article_title">xView2 Challenge</p>
-                    <div class="article_journal">
-                        <p><i class="fas fa-trophy text-warning"></i>
-                            4<sup>th</sup> Place (4/3500+), overall</p></div>
-                    <div class="flex-shrink-0"><a href="https://spacenet.ai/sn6-challenge/">Website</a>&nbsp;
-                        <a href="https://xview2.org/challenge">Announcement</a>&nbsp;
-                        <a href="https://github.com/DIUx-xView/xView2_fourth_place">Code</a>&nbsp;
-                    </div>
-                </div>
-
-                <div class="article_content">
-                    <p><b>[2019.10-2019.12]</b></p>
-                    <p class="article_title">2019 IEEE GRSS Data Fusion Contest, Single-view Semantic 3D Challenge</p>
-                    <div class="article_journal">
-                        <p><i class="fas fa-trophy text-warning"></i>
-                            2<sup>nd</sup> Place (2/400+)</p></div>
-                    <div class="flex-shrink-0"><a href="https://spacenet.ai/sn6-challenge/">Website</a>&nbsp;
-                        <a href="http://www.grss-ieee.org/community/technical-committees/data-fusion/2019-ieee-grss-data-fusion-contest-results/">Announcement</a>&nbsp;
-                        <a href="https://ieeexplore.ieee.org/abstract/document/8897927">Paper</a>&nbsp;
-                    </div>
-                </div>
-
-                <!--      <div class="article_content">-->
-                <!--        <p><b>[2019.06-2019.08]</b></p>-->
-                <!--        <p class="article_title">2019 County Agricultural Brain AI Challenge</p>-->
-                <!--        <div class="article_journal">-->
-                <!--          <p><i class="bi bi-trophy-fill"></i>-->
-                <!--            18<sup>th</sup> Place (18/1520) (seed_2333)</p></div>-->
-                <!--        <div class="flex-shrink-0"><a href="https://spacenet.ai/sn6-challenge/">Website</a>-->
-                <!--          &nbsp;-->
-                <!--          <a href="https://tianchi.aliyun.com/competition/entrance/231717/introduction">Website</a>-->
-                <!--          &nbsp;-->
-                <!--          <a href="https://tianchi.aliyun.com/competition/entrance/231717/rankingList">Leaderboard</a>-->
-                <!--        </div>-->
-                <!--      </div>-->
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Academic Service</h2>
-                    <div class="article_content">
-                        <b>Journal Reviewer</b></br>
-                        IEEE IEEE Transactions on Geoscience and Remote Sensing (TGRS)</br>
-                        Engineering Applications of Artificial Intelligence</br>
-                        Visual Computer</br>
-                        Remote Sensing</br>
-                        Remote Sensing Letters</br>
-                        International Journal of Remote Sensing (IJRS)</br>
-                        Section Editor for ''Medical Imaging Process & Technology''</br>
-                        <b>Conference Reviewer</b></br>
-                        Conference on Neural Information Processing Systems (NeurIPS) 2021, 2022, 2023</br>
-                        IEEE Computer Vision and Pattern Recognition Conference (CVPR) 2022</br>
-                        IEEE International Conference on Computer Vision (ICCV) 2023</br>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-md-12" style="text-align: left">
-            <a href="https://info.flagcounter.com/cNI0"><img src="https://s04.flagcounter.com/map/cNI0/size_s/txt_000000/border_CCCCCC/pageviews_1/viewers_0/flags_0/" alt="Flag Counter" rel="unfollow"></a>
-            <a href="https://info.flagcounter.com/THRk"><img src="https://s01.flagcounter.com/count2/THRk/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" rel="unfollow" style="vertical-align:top"></a>
-        </div>
-
     </div>
 
+
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <a href="https://www.researchgate.net/publication/376519677_EarthVQA_Towards_Queryable_Earth_via_Relational_Reasoning-based_Remote_Sensing_Visual_Question_Answering">
+                        <image src="research_src/EarthVQA/paper_overview.png" height="120px"></image><br>
+                        <h4><strong>Paper</strong></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-01-08/qd43oo1/Poster-AAAI.pdf">
+                        <image src="research_src/EarthVQA/poster.png" height="120px"></image><br>
+                        <h4><strong>Poster</strong></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-01-08/2q83o0t/EarthVQA-video.mp4">
+                        <image src="research_src/EarthVQA/video.png" height="120px"></image><br>
+                        <h4><strong>Video</strong></h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Abstract
+            </h3>
+            <image src="research_src/EarthVQA/dataset_vis.png" class="img-responsive" alt="overview"><br></image>
+            <image src="research_src/EarthVQA/framework.png" class="img-responsive" alt="overview"><br></image>
+            <p class="text-justify">This is follow-up work of our <a href="https://Junjue-Wang.github.io/homepage/LoveDA" style="color: #0000cc">LoveDA (NeurIPS2021)</a>
+            </p>
+            <p class="text-justify">
+                Earth vision research typically focuses on extracting geospatial object locations and categories but
+                neglects the exploration of relations between objects and comprehensive reasoning.
+                Based on city planning needs, we develop a multi-modal multi-task VQA dataset (<b>EarthVQA</b>) to advance relational relational-based judging, counting, and comprehensive analysis.
+                The EarthVQA dataset contains 6000 images, corresponding semantic masks, and 208,593 QA pairs with urban and rural governance requirements embedded.
+                As objects are the basis for complex relational reasoning, we propose a Semantic OBject Awareness framework (<b>SOBA</b>) to advance VQA in an object-centric way.
+                To preserve refined spatial locations and semantics, SOBA leverages a segmentation network for object semantics generation.
+                The object-guided attention aggregates object interior features via pseudo masks, and bidirectional cross attention further models
+                object external relations hierarchically.
+                To optimize object counting, we propose a numerical difference loss that dynamically adds difference penalties, unifying the classification and regression tasks.
+                Experimental results show that SOBA outperforms both advanced general and remote sensing methods.
+                We believe this dataset and framework provide a strong benchmark for Earth vision's complex analysis.
+
+            </p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Experiments on EarthVQA
+            </h3>
+            <image src="research_src/EarthVQA/result.png" class="img-responsive" alt="overview"><br></image>
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                BibTeX
+            </h3>
+            <pre data-role="codeBlock" data-info="text" class="language-text">
+@inproceedings{wang2024earthvqa,
+                    title={Earth{VQA}: Towards Queryable Earth via Relational Reasoning-Based Remote Sensing Visual Question Answering},
+                    author={Junjue Wang and Zhuo Zheng and Zihang Chen and Ailong Ma and Yanfei Zhong},
+                    booktitle={Proceedings of the Thirty-Eighth AAAI Conference on Artificial Intelligence},
+                    year={2024},
+                    volume = {1},
+                    pages = {},
+                }
+@inproceedings{wang2021loveda,
+                    title={Love{DA}: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation},
+                    author={Junjue Wang and Zhuo Zheng and Ailong Ma and Xiaoyan Lu and Yanfei Zhong},
+                    booktitle={Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks},
+                    editor = {J. Vanschoren and S. Yeung},
+                    year={2021},
+                    volume = {1},
+                    pages = {},
+                    url={https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Paper-round2.pdf}
+                }
+                </pre>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Acknowledgments
+            </h3>
+            This work was supported by National Natural Science Foundation of China under Grant Nos. 42325105, 42071350, and 42171336.
+            <br><br>
+            The website template was borrowed from <a href="https://bowenc0221.github.io/">Bowen Cheng</a> and <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+            <p></p>
+        </div>
+    </div>
 </div>
 
-
-
-
-
-
-<!-- Optional JavaScript; choose one of the two! -->
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
--->
-
-
-
+</div>
 </body>
+
 </html>
