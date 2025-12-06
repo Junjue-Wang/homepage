@@ -10,6 +10,23 @@
   <link href="css/main.css" rel="stylesheet">
   <link rel="shortcut icon" href="img/utokyo.ico" type="image/x-icon" />
   <title>Junjue Wang's Page</title>
+  <style>
+    /* Hide overflow news items until user expands */
+    .news-hidden { display: none; }
+    /* Button that visually matches .news-date */
+    .news-toggle-btn {
+      border: none;
+      background: transparent;
+      padding: 0;
+      margin-top: 4px;
+      font-size: inherit;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+    }
+    .news-toggle-btn:focus { outline: none; }
+    .news-toggle-btn:hover { cursor: pointer; }
+  </style>
 </head>
 <body>
 <div id="main_div" class="bg-light text-dark">
@@ -46,7 +63,7 @@
     </div>
 
     <h2 class="section-title">Recent News</h2>
-    <div class="section-card">
+    <div class="section-card" id="news-list">
       <div class="news-item">
         <div class="news-date">[2025.12]</div>
           <div class="news-body">Our <a href="https://www.sciencedirect.com/science/article/pii/S0924271625004678">CityVLM</a> has been accepted by ISPRS'2026. </div>
@@ -83,19 +100,23 @@
         <div class="news-date">[2024.10]</div>
         <div class="news-body">We host a special issue <a href="https://www.mdpi.com/journal/remotesensing/special_issues/B875S8XOC7">Advancement of Multi-Source Remote Sensing Data Fusion in Environmental Monitoring</a> at [Remote Sensing] (IF: 4.2). Please feel free to contribute :)</div>
       </div>
-<!--      <div class="news-item">-->
-<!--        <div class="news-date">[2024.05]</div>-->
-<!--        <div class="news-body">Our <a href="https://www.researchgate.net/publication/380697506_EarthVQANet_Multi-task_visual_question_answering_for_remote_sensing_image_understanding">EarthVQANet</a> has been accepted by ISPRS'2024.</div>-->
-<!--      </div>-->
+      <div class="news-item">
+        <div class="news-date">[2024.05]</div>
+        <div class="news-body">Our <a href="https://www.researchgate.net/publication/380697506_EarthVQANet_Multi-task_visual_question_answering_for_remote_sensing_image_understanding">EarthVQANet</a> has been accepted by ISPRS'2024.</div>
+      </div>
       <div class="news-item">
         <div class="news-date">[2024.05]</div>
         <div class="news-body">The Code and Dataset of EarthVQA (AAAI'2024) are released <a href="https://github.com/Junjue-Wang/EarthVQA">here.</a></div>
       </div>
-<!--      <div class="news-item">-->
-<!--        <div class="news-date">[2024.01]</div>-->
-<!--        <div class="news-body">Our <a href="https://github.com/Junjue-Wang/LoveNAS">LoveNAS</a> was accepted by ISPRS'2024.</div>-->
-<!--      </div>-->
+      <div class="news-item">
+        <div class="news-date">[2024.01]</div>
+        <div class="news-body">Our <a href="https://github.com/Junjue-Wang/LoveNAS">LoveNAS</a> was accepted by ISPRS'2024.</div>
+      </div>
+      <div class="news-item news-toggle-row">
+        <button id="news-toggle" class="news-date news-toggle-btn" type="button">More</button>
+      </div>
     </div>
+
 
     <h2 class="section-title">Selected Publications</h2>
     <div class="article_content">
@@ -373,6 +394,36 @@
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const newsItems = Array.from(document.querySelectorAll('#news-list .news-item:not(.news-toggle-row)'));
+    const toggleBtn = document.getElementById('news-toggle');
+    const keepVisible = 7;
+    let expanded = false;
+
+    function syncView() {
+      newsItems.forEach((item, index) => {
+        if (!expanded && index >= keepVisible) {
+          item.classList.add('news-hidden');
+        } else {
+          item.classList.remove('news-hidden');
+        }
+      });
+      toggleBtn.textContent = expanded ? 'Less' : 'More';
+    }
+
+    if (newsItems.length <= keepVisible) {
+      toggleBtn.style.display = 'none';
+      return;
+    }
+
+    syncView();
+    toggleBtn.addEventListener('click', function () {
+      expanded = !expanded;
+      syncView();
+    });
+  });
+</script>
 
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <!--
