@@ -13,6 +13,61 @@
   <title>Junjue Wang's Page</title>
 
   <style>
+    /* Section navigation bar (between bio and news) */
+    .top-nav {
+      margin: 10px 0 6px;
+      background: transparent;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      box-shadow: none;
+    }
+    .top-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 6px;
+      padding: 2px 4px;
+    }
+    .top-nav-links a {
+      position: relative;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .top-nav-links a:hover {
+      color: var(--ink);
+      background: var(--bg);
+    }
+    .top-nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 2px;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+    .top-nav-links a:hover::after { transform: scaleX(1); }
+
+    html { scroll-behavior: smooth; }
+    /* Offset anchor targets so sticky nav doesn't overlap */
+    [id] { scroll-margin-top: 80px; }
+
+    @media (max-width: 768px) {
+      .top-nav-links {
+        justify-content: space-between;
+      }
+      .top-nav-links a { padding: 6px 10px; font-size: 0.92rem; }
+    }
+
     /* Hide overflow news items until user expands */
     .news-hidden { display: none; }
 
@@ -148,6 +203,15 @@
       </p>
     </div>
 
+    <nav class="top-nav" aria-label="Section navigation">
+      <div class="top-nav-links">
+        <a href="#publications">Publication</a>
+        <a href="#funding">Funding</a>
+        <a href="#award">Award</a>
+        <a href="#service">Service</a>
+      </div>
+    </nav>
+
     <h2 class="section-title">Recent News</h2>
     <div class="section-card" id="news-list">
       <div class="news-item">
@@ -219,7 +283,7 @@
       </div>
     </div>
 
-    <h2 class="section-title">Selected Publications</h2>
+    <h2 class="section-title" id="publications">Selected Publications</h2>
 
     <div class="article_content">
       <p class="article_title">DisasterM3: A Remote Sensing Vision-Language Dataset for Disaster Damage Assessment and Response</p>
@@ -330,19 +394,19 @@
       </div>
     </div>
 
-    <h2 class="section-title">Funding</h2>
+    <h2 class="section-title" id="funding">Funding</h2>
     <div class="article_content">
       <p><b>[2026.04.01-2029.03.31]</b></p>
-      <p class="article_title">PI, Grant-in-Aid for Early-Career Scientists, 若手研究, 26K21244</p>
+      <p class="article_title">PI, Grant-in-Aid for Early-Career Scientists, 若手研究, 26K21244 (4,420,000 yen)</p>
       <p class="article_title">Chain-of-Thought Reasoning-Enhanced Vision-Language Models for Reliable Disaster Response</p>
       <div class="flex-shrink-0">
         <a href="https://kaken.nii.ac.jp/en/grant/KAKENHI-PROJECT-26K21244">Website</a>
       </div>
     </div>
-    
+
     <div class="article_content">
       <p><b>[2025.04.01-2029.03.31]</b></p>
-      <p class="article_title">Co-I, Grant-in-Aid for Scientific Research (B), 基盤研究(B), 25K03145</p>
+      <p class="article_title">Co-I, Grant-in-Aid for Scientific Research (B), 基盤研究(B), 25K03145 (18,590,000 yen)</p>
       <p class="article_title">Robust Geospatial Foundation Models: Innovative Techniques and Comprehensive Benchmarks</p>
       <div class="flex-shrink-0">
         <a href="https://kaken.nii.ac.jp/en/grant/KAKENHI-PROJECT-25K03145">Website</a>
@@ -357,7 +421,7 @@
       </div>
     </div>
 
-    <h2 class="section-title">Award</h2>
+    <h2 class="section-title" id="award">Award</h2>
     <div class="article_content">
       <p><b>[2025.6-2025.10]</b></p>
       <p class="article_title">2025 AI for Earthquake Response Challenge funded by ESA Φ-lab, Disasters Charter, and IEEE ESI TC</p>
@@ -466,7 +530,7 @@
       </div>
     </div>
 
-    <h2 class="section-title">Academic Service</h2>
+    <h2 class="section-title" id="service">Academic Service</h2>
     <div class="section-card">
       <div class="article_content">
         <b>Workshop Organizer</b><br>
